@@ -1,0 +1,31 @@
+--[[
+    99 Nights — Advanced Single-File GUI (Client)
+    (... script anterior ...)
+]]
+
+-- (conteúdo anterior do script que já foi gerado)
+
+-- ===== Dashboard =====
+local dash = Instance.new("TextLabel")
+dash.Size = UDim2.new(1,0,1,0)
+dash.BackgroundTransparency = 1
+dash.TextXAlignment = Enum.TextXAlignment.Left
+dash.TextSize = 16
+dash.Font = Enum.Font.SourceSans
+dash.TextColor3 = Color3.fromRGB(30,30,32)
+dash.Text = "📊 99 Nights — Painel\n\n" ..
+            "- Abas superiores para navegar.\n" ..
+            "- [R] para scan rápido.\n" ..
+            "- Selecione itens para coletar/ESP.\n" ..
+            "- Crie/perfil de alvos na aba Itens.\n" ..
+            "- Adicione Waypoints para teleport.\n" ..
+            "- Configure cooldowns/ajustes na aba Config.\n"
+dash.Parent = pgDashboard
+
+-- ===== Atualizações periódicas =====
+RunService.Heartbeat:Connect(function()
+    updateLogs()
+end)
+
+logf("99 Nights — GUI Avançada carregada com sucesso.")
+showTab("Dashboard")
